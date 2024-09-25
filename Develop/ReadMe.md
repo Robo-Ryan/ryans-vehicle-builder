@@ -18,7 +18,7 @@ Ryan’s Vehicle Builder is a powerful Command Line Interface (CLI) application 
 ## Installation
 
 To get started, clone the repository to your local machine using the following command:
-git clone https://github.com/Robo-Ryan/vehicle-builder.git
+git clone https://github.com/Robo-Ryan/ryans-vehicle-builder.git
 
 Next, navigate to the project directory and install the necessary dependencies:
 
