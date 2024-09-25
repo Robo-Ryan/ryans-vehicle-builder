@@ -69,6 +69,14 @@ class Cli {
           // create a car
           this.createCar();
         }
+        if (answers.vehicleType === 'Truck') {
+          // create a car
+          this.createTruck();
+        }
+        if (answers.vehicleType === 'Motorbike') {
+          // create a car
+          this.createMotorbike();
+        }
         // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
       });
   }
@@ -174,6 +182,24 @@ class Cli {
         // TODO: push the truck to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the truck
         // TODO: perform actions on the truck
+        const truck = new Truck(
+          // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
+          Cli.generateVin(),
+          answers.color,
+          answers.make,
+          answers.model,
+          parseInt(answers.year),
+          parseInt(answers.weight),
+          parseInt(answers.topSpeed),
+          [],
+          parseInt(answers.towingCapacity)
+        );
+         // push the truck to the vehicles array
+         this.vehicles.push(truck);
+         // set the selectedVehicleVin to the vin of the truck
+         this.selectedVehicleVin = truck.vin;
+         // perform actions on the truck
+         this.performActions();
       });
   }
 
@@ -237,7 +263,26 @@ class Cli {
         // TODO: push the motorbike to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the motorbike
         // TODO: perform actions on the motorbike
+        const motorbike = new Motorbike(
+        Cli.generateVin(),
+        answers.color,
+        answers.make,
+        answers.model,
+        parseInt(answers.year),
+        parseInt(answers.weight),
+        parseInt(answers.topSpeed),
+        [],
+        )
+        motorbike.wheels.push(new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand));
+        motorbike.wheels.push(new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand));
+        // push the motorbike to the vehicles array
+        this.vehicles.push(motorbike);
+        // set the selectedVehicleVin to the vin of the motorbike
+        this.selectedVehicleVin = motorbike.vin;
+        // perform actions on the motorbike
+        this.performActions();
       });
+
   }
 
   // method to find a vehicle to tow
