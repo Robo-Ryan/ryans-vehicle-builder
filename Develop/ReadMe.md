@@ -29,7 +29,7 @@ Finally, start the app by running:
 `npm start`
 
 ## Usage
-- Watch [this video]() on how to use Ryan's Vehicle Builder
+- Watch [this video](https://www.loom.com/share/8a3a1db10e704d9db722a64ac9a3ade0?sid=07e65e8b-e8b8-428e-a948-c2473c7bfb1a) on how to use Ryan's Vehicle Builder
   
 Once the installation is complete, use the command below to start the CLI and begin building vehicles:
 npm start
