@@ -13,8 +13,7 @@ class Motorbike extends Vehicle {
   year: number;
   weight: number;
   topSpeed: number;
-  wheels: Wheel[];
-
+  wheels: Wheel[] = [];
   
   // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[])
   constructor(
@@ -25,7 +24,7 @@ class Motorbike extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[],
   ) {
     super();
     this.vin = vin;
@@ -35,9 +34,11 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
+    this.wheels = wheels;
     if (wheels && wheels.length === 2) {
       this.wheels = wheels;
     } else {
+      // Create 2 new default Wheel objects if it does not
       this.wheels = [new Wheel(), new Wheel()];
     }
   }
